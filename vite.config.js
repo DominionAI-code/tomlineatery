@@ -6,7 +6,16 @@ import { visualizer } from "rollup-plugin-visualizer";
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    react(),
+    react({
+      // Add explicit React configuration
+      jsxRuntime: "automatic",
+      jsxImportSource: "react",
+      babel: {
+        plugins: [],
+        babelrc: false,
+        configFile: false,
+      },
+    }),
     visualizer({
       open: true, // auto-opens report in browser
       gzipSize: true,
@@ -16,11 +25,13 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      // Add any aliases if needed
+      react: "react",
+      "react-dom": "react-dom",
     },
+    dedupe: ["react", "react-dom"],
   },
   build: {
-    sourcemap: true, // Added for better debugging
+    sourcemap: true,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -32,5 +43,9 @@ export default defineConfig({
         },
       },
     },
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom"],
+    force: true,
   },
 });
