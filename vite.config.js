@@ -31,9 +31,9 @@ export default defineConfig({
     dedupe: ["react", "react-dom"],
   },
   build: {
-    sourcemap: true,
     rollupOptions: {
       output: {
+        format: "es", // Ensure ES modules format
         manualChunks(id) {
           if (id.includes("node_modules")) {
             if (id.includes("react")) return "react-vendor";
@@ -43,6 +43,7 @@ export default defineConfig({
         },
       },
     },
+    sourcemap: true,
   },
   optimizeDeps: {
     include: ["react", "react-dom"],
