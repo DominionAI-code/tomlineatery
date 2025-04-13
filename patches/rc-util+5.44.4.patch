@@ -1,13 +1,16 @@
 diff --git a/node_modules/rc-util/es/ref.js b/node_modules/rc-util/es/ref.js
-index 7ccaf2c..4883fda 100644
+index 7ccaf2c..f884d82 100644
 --- a/node_modules/rc-util/es/ref.js
 +++ b/node_modules/rc-util/es/ref.js
-@@ -3,7 +3,7 @@ import { isValidElement, version } from 'react';
+@@ -1,9 +1,9 @@
+ import _typeof from "@babel/runtime/helpers/esm/typeof";
+-import { isValidElement, version } from 'react';
++import React, { isValidElement } from 'react';
  import { ForwardRef, isMemo } from 'react-is';
  import useMemo from "./hooks/useMemo";
  import isFragment from "./React/isFragment";
 -var ReactMajorVersion = Number(version.split('.')[0]);
-+var ReactMajorVersion = (version && typeof version === 'string') ? Number(version.split('.')[0]) : 0;
++var ReactMajorVersion = (React && React.version) ? Number(React.version.split('.')[0]) : 0;
  export var fillRef = function fillRef(ref, node) {
    if (typeof ref === 'function') {
      ref(node);
