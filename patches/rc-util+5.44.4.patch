@@ -1,0 +1,13 @@
+diff --git a/node_modules/rc-util/es/ref.js b/node_modules/rc-util/es/ref.js
+index 7ccaf2c..4883fda 100644
+--- a/node_modules/rc-util/es/ref.js
++++ b/node_modules/rc-util/es/ref.js
+@@ -3,7 +3,7 @@ import { isValidElement, version } from 'react';
+ import { ForwardRef, isMemo } from 'react-is';
+ import useMemo from "./hooks/useMemo";
+ import isFragment from "./React/isFragment";
+-var ReactMajorVersion = Number(version.split('.')[0]);
++var ReactMajorVersion = (version && typeof version === 'string') ? Number(version.split('.')[0]) : 0;
+ export var fillRef = function fillRef(ref, node) {
+   if (typeof ref === 'function') {
+     ref(node);

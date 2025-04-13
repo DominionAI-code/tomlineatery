@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "analyze": "vite build"
+    "analyze": "vite build",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.14",
@@ -36,6 +37,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "patch-package": "^8.0.0",
     "rollup-plugin-visualizer": "^5.14.0",
     "vite": "^6.2.0"
   },
