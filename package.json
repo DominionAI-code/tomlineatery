@@ -2,7 +2,7 @@
   "name": "tomlin-eatery-frontend",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://DominionAI-code.github.io/tomlin-eatery-frontend/",
+  "homepage": "https://dominionai-code.github.io/tomlineatery/",
   "type": "module",
   "scripts": {
     "dev": "vite",
